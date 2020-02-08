@@ -1,0 +1,17 @@
+[
+    {
+        "sitename":"听书网",
+        "site":"https://www.ting22.com/",
+        "reslover":"ting22",
+        "pool":10,
+        "books":[
+            {
+                "name":"赘婿",
+                "author":"剧舞吧雅居",
+                "path":"book/1705.html",
+                "reslover":".content .list_book li",
+                "cover":"https://www.ting22.com/file/content/2019/5DC38F01D6EDF.jpg"
+            }
+        ]
+    }
+]
