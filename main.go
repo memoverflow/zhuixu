@@ -1,27 +1,30 @@
 package main
 
 import (
-	"book/model"
-	"fmt"
 	"log"
+	"sync"
+
+	"github.com/xuren87/zhuixu/model"
 )
+
+const iv = 790
 
 func main() {
 
-	sites, err := model.RetrieveBooks()
+	site, err := model.RetrieveBooks()
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	for _, site := range sites {
+	var waitGroup sync.WaitGroup
 
-		fmt.Println(site.SiteName)
+	waitGroup.Add(len(site.PlayList))
 
-		for _, book := range site.Books {
-			fmt.Println(book.Name)
+	for index, p := range site.PlayList {
+		if index < iv {
+			continue
 		}
-
+		model.DownloadFile(p)
 	}
-
 }

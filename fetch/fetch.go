@@ -1,9 +1,9 @@
 package fetch
 
 import (
-	_ "book/model"
+	"github.com/xuren87/zhuixu/model"
 )
 
-func Books(sites []*Site) []*Site {
+func download(sites []*model.Site) {
 
 }
